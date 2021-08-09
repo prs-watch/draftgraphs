@@ -17,6 +17,7 @@ def __preprocess_bonus(data: pd.DataFrame) -> pd.DataFrame:
         data["Bonus"] = data["Bonus"].str.replace("$", "", regex=False)
         data["Bonus"] = data["Bonus"].str.replace(",", "", regex=False)
     data["Type"] = data["Type"].fillna("UND")
+    data["Pos"] = data["Pos"].fillna("UND")
     data = data.fillna(0)
     data["Bonus"] = data["Bonus"].astype(int)
     return data
